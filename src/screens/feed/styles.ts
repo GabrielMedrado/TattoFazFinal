@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     header: {
       marginTop: -20,
       marginLeft: -20,
-      height: 160,
+      height: 130,
       width: 450,
       flexDirection: 'row',
       justifyContent: 'space-between',
@@ -24,15 +24,15 @@ export const styles = StyleSheet.create({
       elevation: 3,
     },
     logo: {
-      width: 150,
-      height: 150,
-      marginTop: 30,
-      marginLeft: 14,
+      width: 120,
+      height: 90,
+      marginTop: 5,
+      marginLeft: 10,
       resizeMode: 'contain',
     },
     messageButton: {
       marginTop: 30,
-      marginRight: 48,
+      marginRight: 50,
     },
     feedItem: {
       flex: 1,
@@ -55,7 +55,7 @@ export const styles = StyleSheet.create({
     feedText: {
       position: 'absolute',
       bottom: 10,
-      right: 10,
+      right: 20,
       fontSize: 30,
       fontWeight: 'bold',
       color: '#fff',
