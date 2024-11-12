@@ -23,7 +23,7 @@ const tattooDesign: TattooDesign = {
 };
 
 const tattooArtist: TattooArtist = {
-  name: 'Paulo Lobo',
+  name: 'Paulo Matias',
   rating: 4.97,
   distance: 8,
   address: 'Av. Marechal Tito, 6829',
