@@ -31,7 +31,7 @@ export default function LoginScreen() {
           <TouchableOpacity 
             style={styles.loginButton}>
               <Text style={styles.buttonText}
-              onPress={() => navigation.navigate("Feed")}
+              onPress={() => navigation.navigate("MainTabs", { screen: "Feed" })}
               >
                 Login
               </Text>
