@@ -4,14 +4,14 @@ import { FontAwesome } from '@expo/vector-icons'; // Para os ícones de coraçã
 import { styles } from './style';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-// Lista de tatuagens realistas
+// Lista de tatuagens tribais
 const tattooList = [
-  { id: '1', title: 'ÍNDIA', image: require('../../../assets/realista/india.jpg'), estimatedTime: '3 - 5 HORAS', favorite: false },
-  { id: '2', title: 'HORROR', image: require('../../../assets/realista/horror.jpg'), estimatedTime: '6 - 9 HORAS', favorite: false },
-  { id: '3', title: 'HORSE', image: require('../../../assets/realista/horse.jpg'), estimatedTime: '12 - 15 HORAS', favorite: false },
+  { id: '1', title: 'TORNOZELO', image: require('../../../assets/tribal/tornozelotattoo.jpg'), estimatedTime: '4 - 6 HORAS', favorite: false },
+  { id: '2', title: 'TARTARUGA', image: require('../../../assets/tribal/tartaruga.jpg'), estimatedTime: '5 - 7 HORAS', favorite: false },
+  { id: '3', title: 'BRAÇO', image: require('../../../assets/tribal/bracotattoo.jpg'), estimatedTime: '6 - 9 HORAS', favorite: false },
 ];
 
-export default function Realista() {
+export default function Tribal() {
   const [tattoos, setTattoos] = useState(tattooList);
 
   const toggleFavorite = (id: string) => {
@@ -30,7 +30,7 @@ export default function Realista() {
       </View>
 
       {/* Título acima da lista de tatuagens */}
-      <Text style={styles.pageTitle}>TATUAGENS{'\n'}REALISTAS</Text>
+      <Text style={styles.pageTitle}>TATUAGENS{'\n'}TRIBAIS</Text>
 
       {/* Lista de tatuagens */}
       <ScrollView contentContainerStyle={styles.tattooList}>

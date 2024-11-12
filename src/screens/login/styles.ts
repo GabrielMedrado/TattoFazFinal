@@ -123,6 +123,6 @@ export const styles = StyleSheet.create({
         width: '60%',
         height: 200,
         alignSelf: 'center',
-        marginTop: -27,
+        marginTop: 30,
     },
 });
