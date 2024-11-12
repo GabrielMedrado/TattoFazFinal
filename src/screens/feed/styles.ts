@@ -26,13 +26,13 @@ export const styles = StyleSheet.create({
     logo: {
       width: 120,
       height: 90,
-      marginTop: 5,
+      marginTop: 10,
       marginLeft: 10,
       resizeMode: 'contain',
     },
     messageButton: {
       marginTop: 30,
-      marginRight: 50,
+      marginRight: 30,
     },
     feedItem: {
       flex: 1,
@@ -55,7 +55,7 @@ export const styles = StyleSheet.create({
     feedText: {
       position: 'absolute',
       bottom: 10,
-      right: 20,
+      right: 10,
       fontSize: 30,
       fontWeight: 'bold',
       color: '#fff',
