@@ -4,14 +4,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { enableScreens } from 'react-native-screens';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import TabBarIcon from './src/screens/components/TabBarIcon'
+import TabBarIcon from './src/screens/components/TabBarIcon';
 import LoginScreen from './src/screens/login/Login';
 import CadastroScreen from './src/screens/cadastro/Cadastro';
 import FeedScreen from './src/screens/feed/Feed';
 import BuscaScreen from './src/screens/busca/busca';
 import AgendamentoScreen from './src/screens/agendamento/Agendamento';
 import PerfilScreen from './src/screens/perfil/Perfil';
-import RealistaScreen from './src/screens/realista/Realista';
+import RealistaScreen from './src/screens/realista/realista';
 import OrientalScreen from './src/screens/oriental/Oriental';
 import TribalScreen from './src/screens/tribal/Tribal';
 import TatuadoresScreen from './src/screens/tatuadores/selecionarTatuadores';
@@ -35,41 +35,53 @@ function TabRoutes() {
           alignItems: 'center',
         },
         headerShown: false,
-      }}>
-
+      }}
+    >
       <Tab.Screen
-        name="Feed"
+        name='Feed'
         component={FeedScreen}
         options={{
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+            <TabBarIcon
+              name={focused ? 'home' : 'home-outline'}
+              color={color}
+            />
           ),
         }}
       />
       <Tab.Screen
-        name="Busca"
+        name='Busca'
         component={BuscaScreen}
         options={{
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'search' : 'search-outline'} color={color} />
+            <TabBarIcon
+              name={focused ? 'search' : 'search-outline'}
+              color={color}
+            />
           ),
         }}
       />
       <Tab.Screen
-        name="Agendamento"
+        name='Agendamento'
         component={AgendamentoScreen}
         options={{
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'calendar' : 'calendar-outline'} color={color} />
+            <TabBarIcon
+              name={focused ? 'calendar' : 'calendar-outline'}
+              color={color}
+            />
           ),
         }}
       />
       <Tab.Screen
-        name="Perfil"
+        name='Perfil'
         component={PerfilScreen}
         options={{
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'person' : 'person-outline'} color={color} />
+            <TabBarIcon
+              name={focused ? 'person' : 'person-outline'}
+              color={color}
+            />
           ),
         }}
       />
@@ -81,44 +93,44 @@ function TabRoutes() {
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName='Login'>
         <Stack.Screen
-          name="Login"
+          name='Login'
           component={LoginScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Cadastro"
+          name='Cadastro'
           component={CadastroScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="MainTabs"
+          name='MainTabs'
           component={TabRoutes}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Perfil"
+          name='Perfil'
           component={PerfilScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="realista"
+          name='realista'
           component={RealistaScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Oriental"
+          name='Oriental'
           component={OrientalScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Tribal"
+          name='Tribal'
           component={TribalScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Tatuadores"
+          name='Tatuadores'
           component={TatuadoresScreen}
           options={{ headerShown: false }}
         />
