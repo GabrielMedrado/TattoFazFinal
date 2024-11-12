@@ -31,7 +31,7 @@ const TatuadoresScreen: React.FC = () => {
       <View style={styles.tatuador}>
         <TatuadorItem
           image={require('../../../assets/agendamento/tatuador1.png')}
-          name="KAH BARBOSA"
+          name="DEYVERSON ANTUNES"
           rating="4.95 ESTRELAS"
           distance="6 KM DE DISTÂNCIA"
         />
