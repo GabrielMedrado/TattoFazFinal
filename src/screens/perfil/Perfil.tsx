@@ -52,10 +52,11 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   logo: {
-    width: 80,
-    height: 80,
+    width: 120,
+    height: 90,
     alignSelf: 'center',
-    marginBottom: 20,
+    marginLeft: 300,
+    marginTop: 20,
     resizeMode: 'contain',
   },
   profileContainer: {
@@ -64,9 +65,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   profileImage: {
-    width: 70,
-    height: 70,
-    borderRadius: 35,
+    width: 100,
+    height: 100,
+    borderRadius: 50,
     marginRight: 10,
   },
   profileInfo: {
@@ -100,7 +101,6 @@ const styles = StyleSheet.create({
   },
   logoutButton: {
     marginTop: 20,
-    alignItems: 'center',
   },
   logoutText: {
     fontSize: 16,

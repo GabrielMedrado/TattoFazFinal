@@ -31,7 +31,7 @@ const TatuadoresScreen: React.FC = () => {
       <View style={styles.tatuador}>
         <TatuadorItem
           image={require('../../../assets/agendamento/tatuador1.png')}
-          name="KAH BARBOSA"
+          name="DEYVERSON ANTUNES"
           rating="4.95 ESTRELAS"
           distance="6 KM DE DISTÂNCIA"
         />
@@ -76,8 +76,8 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   logo: {
-    width: 100,
-    height: 50,
+    width: 120,
+    height: 90,
   },
   title: {
     fontSize: 18,
