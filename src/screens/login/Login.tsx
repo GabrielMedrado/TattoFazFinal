@@ -51,7 +51,7 @@ export default function LoginScreen() {
         <TouchableOpacity style={styles.googleButton}>
 
           <Image 
-            source={require('../../../assets/googleLogo.png')}
+            source={require('../../../assets/login/googleLogo.png')}
             style={styles.googleLogo}
           />
 
@@ -62,7 +62,7 @@ export default function LoginScreen() {
         </TouchableOpacity>
 
         <Image 
-          source={require('../../../assets/logotatto.png')}
+          source={require('../../../assets/logos/logo-pt.png')}
           style={styles.logo}
           resizeMode="contain"
         />
