@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     header: {
       marginTop: -20,
       marginLeft: -20,
-      height: 130,
+      height: 160,
       width: 450,
       flexDirection: 'row',
       justifyContent: 'space-between',
@@ -26,7 +26,7 @@ export const styles = StyleSheet.create({
     logo: {
       width: 150,
       height: 150,
-      marginTop: 0,
+      marginTop: 30,
       marginLeft: 14,
       resizeMode: 'contain',
     },
