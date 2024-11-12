@@ -29,15 +29,25 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         color: '#FFF',
     },
-    inputPassword: {
+    passwordContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
         marginRight: 45,
         marginLeft: 45,
         marginTop: 20,
         height: 45,
         backgroundColor: '#000',
         borderRadius: 10,
-        padding: 8,
+        paddingHorizontal: 8,
+        borderWidth: 1,
+    },
+    inputPassword: {
+        flex: 1,
         fontSize: 16,
+        color: '#FFF',
+    },
+    eyeIcon: {
+        padding: 5,
     },
     divider: {
         width: "80%",
@@ -45,44 +55,44 @@ export const styles = StyleSheet.create({
         backgroundColor: "#000",
         marginTop: 20,
         marginLeft: 36,
-      },
-      forgotPassword: {
+    },
+    forgotPassword: {
         alignSelf: 'center',
         marginBottom: 20,
         marginLeft: 148,
         marginTop: 10,
-      },
-      forgotPasswordText: {
+    },
+    forgotPasswordText: {
         color: '#000000',
         fontSize: 16,
-      },
-      buttonContainer: {
+    },
+    buttonContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginBottom: 20,
         width: '80%', 
         alignSelf: 'center',
-      },
-      loginButton: {
+    },
+    loginButton: {
         flex: 1,
         backgroundColor: '#000000',
         paddingVertical: 15,
         borderRadius: 30,
         marginRight: 5,
-      },
-      registerButton: {
+    },
+    registerButton: {
         flex: 1,
         backgroundColor: '#000000',
         paddingVertical: 15,
         borderRadius: 30,
         marginLeft: 5,
-      },
-      buttonText: {
+    },
+    buttonText: {
         color: '#fff',
         fontSize: 16,
         textAlign: 'center',
-      },
-      googleButton: {
+    },
+    googleButton: {
         flexDirection: 'row', 
         alignItems: 'center',
         backgroundColor: '#000000',
@@ -97,22 +107,22 @@ export const styles = StyleSheet.create({
         shadowOpacity: 0.3,
         shadowRadius: 3.84,
         elevation: 5,
-      },
-      googleLogo: {
+    },
+    googleLogo: {
         width: 25,
         height: 25,
         marginLeft: 50
-      },
-      googleButtonText: {
+    },
+    googleButtonText: {
         marginLeft: 17,
         color: '#ddd',
         fontSize: 17,
         textAlign: 'center',
-      },
-      logo: {
+    },
+    logo: {
         width: '60%',
         height: 200,
         alignSelf: 'center',
         marginTop: -27,
-      },
-})
+    },
+});

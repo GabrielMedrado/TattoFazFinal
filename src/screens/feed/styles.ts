@@ -24,15 +24,15 @@ export const styles = StyleSheet.create({
       elevation: 3,
     },
     logo: {
-      width: 120,
-      height: 90,
-      marginTop: 10,
-      marginLeft: 10,
+      width: 150,
+      height: 150,
+      marginTop: 0,
+      marginLeft: 14,
       resizeMode: 'contain',
     },
     messageButton: {
       marginTop: 30,
-      marginRight: 30,
+      marginRight: 48,
     },
     feedItem: {
       flex: 1,
