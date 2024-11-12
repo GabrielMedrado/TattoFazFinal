@@ -19,8 +19,8 @@ export const styles = StyleSheet.create({
         marginTop: 20,
         marginBottom: 20,
         marginLeft: 36,
-      },
-      input: {
+    },
+    input: {
         marginRight: 45,
         marginLeft: 45,
         marginTop: 14,
@@ -30,5 +30,27 @@ export const styles = StyleSheet.create({
         padding: 8,
         fontSize: 14,
         color: '#FFF',
-      }
-})
+    },
+    termsContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 15,
+        marginLeft: 45, // Mantém o alinhamento com o texto
+    },
+    checkbox: {
+        width: 20,
+        height: 20,
+        borderWidth: 1,
+        borderColor: '#FFF',
+        borderRadius: 4,
+        marginRight: 10,
+    },
+    checkboxSelected: {
+        backgroundColor: '#FFF', // Cor que indica seleção
+    },
+    terms: {
+        fontSize: 15,
+        color: '#000',
+        fontWeight: 'bold',
+    },
+});

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 
 export default function CadastroScreen() {
   const [birthDate, setBirthDate] = useState('');
   const [cpf, setCpf] = useState('');
+  const [acceptTerms, setAcceptTerms] = useState(false);
+  const [acceptPromotions, setAcceptPromotions] = useState(false);
 
   const handleDateChange = (text) => {
     const cleaned = text.replace(/[^0-9]/g, '');
@@ -65,7 +67,7 @@ export default function CadastroScreen() {
         placeholder="Data de nascimento DD/MM/AAAA"
         keyboardType="numeric"
         placeholderTextColor="#FFF"
-        maxLength={10} // Limita o tamanho para DD/MM/AAAA
+        maxLength={10} 
         value={birthDate}
         onChangeText={handleDateChange}
       />
@@ -75,12 +77,35 @@ export default function CadastroScreen() {
         placeholder="CPF"
         keyboardType="numeric"
         placeholderTextColor="#FFF"
-        maxLength={14} // Limita o tamanho para XXX.XXX.XXX-XX
+        maxLength={14} 
         value={cpf}
         onChangeText={handleCpfChange}
       />
 
       <View style={styles.divider} />
+
+      {/* Aceite dos Termos */}
+      <View style={styles.termsContainer}>
+        <TouchableOpacity
+          style={[styles.checkbox, acceptTerms && styles.checkboxSelected]}
+          onPress={() => setAcceptTerms(!acceptTerms)}
+        />
+        <Text style={styles.terms}>
+          Afirmo que li e aceito os termos {'\n'} e condições.
+        </Text>
+      </View>
+
+      {/* Aceite de Conteúdo Promocional */}
+      <View style={styles.termsContainer}>
+        <TouchableOpacity
+          style={[styles.checkbox, acceptPromotions && styles.checkboxSelected]}
+          onPress={() => setAcceptPromotions(!acceptPromotions)}
+        />
+        <Text style={styles.terms}>
+          Desejo receber conteúdo {'\n'} promocional via e-mail.
+        </Text>
+      </View>
+
     </View>
   );
 }
