@@ -1,8 +1,13 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image,TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from "@react-navigation/native";
+import {styles}  from './style';
+
 
 const TatuadoresScreen: React.FC = () => {
+  const navigation = useNavigation() as any;
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -17,7 +22,7 @@ const TatuadoresScreen: React.FC = () => {
 
       <View style={styles.tattooContainer}>
         <Image
-          source={require('../../../assets/logos/logo-rd.png')}
+          source={require('../../../assets/realista/india.jpg')}
           style={styles.tattooImage}
         />
         <View style={styles.tattooInfo}>
@@ -29,119 +34,50 @@ const TatuadoresScreen: React.FC = () => {
       </View>
 
       <View style={styles.tatuador}>
+        {/* Adicione a navegação no TatuadorItem */}
         <TatuadorItem
           image={require('../../../assets/agendamento/tatuador1.png')}
-          name="DEYVERSON ANTUNES"
+          name="ANTONIO MONTANA"
           rating="4.95 ESTRELAS"
-          distance="6 KM DE DISTÂNCIA"
+          distance="2 KM DE DISTÂNCIA"
+          onPress={() => navigation.navigate('TattooBookingScreen')}
         />
         <TatuadorItem
           image={require('../../../assets/agendamento/tatuador2.png')}
           name="MANOEL GOMES"
           rating="4.75 ESTRELAS"
-          distance="6 KM DE DISTÂNCIA"
+          distance="3.2 KM DE DISTÂNCIA"
+          onPress={() => {}}
         />
         <TatuadorItem
           image={require('../../../assets/agendamento/tatuador3.png')}
           name="PAULA SILVA"
           rating="4.22 ESTRELAS"
           distance="6 KM DE DISTÂNCIA"
+          onPress={() => {}}
         />
       </View>
     </View>
   );
 };
 
-const TatuadorItem: React.FC<{ image: any; name: string; rating: string; distance: string }> = ({ image, name, rating, distance }) => {
+const TatuadorItem: React.FC<{ 
+  image: any; 
+  name: string; 
+  rating: string; 
+  distance: string; 
+  onPress: () => void; 
+}> = ({ image, name, rating, distance, onPress }) => {
   return (
-    <View style={styles.tatuadorItem}>
+    <TouchableOpacity style={styles.tatuadorItem} onPress={onPress}>
       <Image source={image} style={styles.tatuadorImage} />
       <View>
         <Text style={styles.tatuadorName}>{name}</Text>
         <Text style={styles.tatuadorRating}>{rating}</Text>
         <Text style={styles.tatuadorDistance}>{distance}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    padding: 16,
-  },
-  header: {
-    alignItems: 'center',
-    marginBottom: 16,
-  },
-  logo: {
-    width: 120,
-    height: 90,
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginVertical: 16,
-  },
-  tattooContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 16,
-  },
-  tattooImage: {
-    width: 80,
-    height: 80,
-    borderRadius: 10,
-    marginRight: 16,
-  },
-  tattooInfo: {
-    flex: 1,
-  },
-  tattooTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  tattooTime: {
-    fontSize: 14,
-    color: '#666',
-  },
-  tattooDuration: {
-    fontSize: 14,
-    color: '#333',
-  },
-  icon: {
-    position: 'absolute',
-    right: 0,
-    top: 0,
-  },
-  tatuador: {
-    marginTop: 16,
-  },
-  tatuadorItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 16,
-  },
-  tatuadorImage: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    marginRight: 16,
-  },
-  tatuadorName: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  tatuadorRating: {
-    fontSize: 14,
-    color: '#666',
-  },
-  tatuadorDistance: {
-    fontSize: 14,
-    color: '#333',
-  },
-});
 
 export default TatuadoresScreen;

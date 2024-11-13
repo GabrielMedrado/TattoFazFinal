@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     input: {
         marginRight: 45,
         marginLeft: 45,
-        marginTop: 85,
+        marginTop: 80,
         height: 45,
         backgroundColor: '#000',
         borderRadius: 10,

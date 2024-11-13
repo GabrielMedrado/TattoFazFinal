@@ -1,9 +1,14 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
 
 const ProfileScreen: React.FC = () => {
+  const navigation = useNavigation() as any;
+
+
   return (
-    <View style={styles.container}>
+    <ScrollView>
+       <View style={styles.container}>
       {/* Logo */}
       <Image source={require('../../../assets/logos/logo-rd.png')} style={styles.logo} />
 
@@ -39,9 +44,15 @@ const ProfileScreen: React.FC = () => {
 
       {/* Logout Option */}
       <TouchableOpacity style={styles.logoutButton}>
-        <Text style={styles.logoutText}>Sair</Text>
+        <Text 
+          style={styles.logoutText}
+          onPress={() => navigation.navigate("Login")}
+          >
+            Sair
+          </Text>
       </TouchableOpacity>
-    </View>
+    </View>  
+    </ScrollView>
   );
 };
 

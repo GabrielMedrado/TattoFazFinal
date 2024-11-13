@@ -1,38 +1,42 @@
 import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { useNavigation } from "@react-navigation/native";
 
 interface TattooArtist {
   name: string;
   rating: number;
   distance: number;
   address: string;
-  imageUrl: string;
+  imageUrl: any; // tipo ajustado para qualquer imagem local
 }
 
 interface TattooDesign {
   title: string;
   estimatedTime: string;
-  imageUrl: string;
+  imageUrl: any; // tipo ajustado para qualquer imagem local
 }
 
+// Dados de design e artista com require direto, pois são imagens locais
 const tattooDesign: TattooDesign = {
   title: 'Índia',
   estimatedTime: '3 - 5 horas',
-  imageUrl: 'url-da-imagem-da-tatuagem',
+  imageUrl: require('../../../assets/realista/india.jpg'),
 };
 
 const tattooArtist: TattooArtist = {
-  name: 'Paulo Ricardo',
-  rating: 4.97,
-  distance: 8,
+  name: 'Antonio Montana',
+  rating: 4.95,
+  distance: 2,
   address: 'Av. Marechal Tito, 6829',
-  imageUrl: 'url-da-imagem-do-tatuador',
+  imageUrl: require('../../../assets/agendamento/tatuador1.png'),
 };
 
-const TattooBookingScreen: React.FC = () => {
+export const TattooBookingScreen: React.FC = () => {
   const [date, setDate] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
+  const navigation = useNavigation() as any;
+
 
   const onChangeDate = (event: any, selectedDate: Date | undefined) => {
     const currentDate = selectedDate || date;
@@ -43,17 +47,17 @@ const TattooBookingScreen: React.FC = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.header}>
-        <Image source={{ uri: 'url-do-logo' }} style={styles.logo} />
+        <Image source={require('../../../assets/logos/logo_br.png')} style={styles.logo} />
       </View>
 
       <View style={styles.tattooDesignContainer}>
-        <Image source={{ uri: tattooDesign.imageUrl }} style={styles.tattooImage} />
+        <Image source={tattooDesign.imageUrl} style={styles.tattooImage} />
         <Text style={styles.tattooTitle}>{tattooDesign.title}</Text>
         <Text style={styles.estimatedTime}>Tempo Estimado: {tattooDesign.estimatedTime}</Text>
       </View>
 
       <View style={styles.artistContainer}>
-        <Image source={{ uri: tattooArtist.imageUrl }} style={styles.artistImage} />
+        <Image source={tattooArtist.imageUrl} style={styles.artistImage} />
         <View style={styles.artistInfo}>
           <Text style={styles.artistName}>{tattooArtist.name}</Text>
           <Text style={styles.artistRating}>{tattooArtist.rating} Estrelas</Text>
@@ -64,9 +68,15 @@ const TattooBookingScreen: React.FC = () => {
 
       <View style={styles.dateTimeContainer}>
         <TouchableOpacity onPress={() => setShowDatePicker(true)}>
-          <Text style={styles.dateText}>Data: {date.toLocaleDateString()}</Text>
+            <Text 
+            style={styles.dateText}>
+              Data: 14/11/2024
+            </Text>
         </TouchableOpacity>
-        <Text style={styles.timeText}>Horário: {date.getHours()}:{date.getMinutes().toString().padStart(2, '0')}</Text>
+
+        <Text style={styles.timeText}>
+            Horário: 17h:00
+          </Text>
       </View>
 
       {showDatePicker && (
@@ -79,7 +89,12 @@ const TattooBookingScreen: React.FC = () => {
       )}
 
       <TouchableOpacity style={styles.confirmButton}>
-        <Text style={styles.confirmButtonText}>CONFIRMAR</Text>
+        <Text 
+          style={styles.confirmButtonText}
+          onPress={() => navigation.navigate("Agendamento")}
+          >
+            CONFIRMAR
+        </Text>
       </TouchableOpacity>
     </ScrollView>
   );

@@ -8,9 +8,9 @@ const appointments = [
   {
     id: '1',
     status: 'Confirmado',
-    date: '26/11 - 13H',
-    location: 'Av. São Miguel, 984',
-    phone: '11 98888-7777',
+    date: '14/11 - 17H',
+    location: 'Av. Marechal Tito, 6829',
+    phone: '(11) 98888-7777',
     artist: { name: 'ANTONIO MONTANA', image: require('../../../assets/agendamento/tatuador1.png') },
   },
   {
@@ -18,15 +18,15 @@ const appointments = [
     status: 'Finalizado',
     date: '13/09 - 10H',
     location: 'Av. São Miguel, 984',
-    phone: '11 98888-7777',
-    artist: { name: 'Carlos Eduardo', image: require('../../../assets/agendamento/tatuador2.png') },
+    phone: '(11) 4002-8922',
+    artist: { name: 'CARLOS EDUARDO', image: require('../../../assets/agendamento/tatuador2.png') },
   },
   {
     id: '3',
     status: 'Finalizado',
     date: '03/04 - 21H',
-    location: 'Av. São Miguel, 984',
-    phone: '11 98888-7777',
+    location: 'Av. PAULISTA, 1234',
+    phone: '(11) 7070-1234',
     artist: { name: 'JULIA MATOS', image: require('../../../assets/agendamento/tatuador3.png') },
   },
 ];

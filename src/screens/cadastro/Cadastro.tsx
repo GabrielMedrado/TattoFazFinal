@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
+import { useNavigation } from "@react-navigation/native";
 
 export default function CadastroScreen() {
+  const navigation = useNavigation() as any;
+
   const [birthDate, setBirthDate] = useState('');
   const [cpf, setCpf] = useState('');
   const [acceptTerms, setAcceptTerms] = useState(false);
@@ -106,6 +109,16 @@ export default function CadastroScreen() {
         </Text>
       </View>
 
+      {/* Botão Cadastrar */}
+      <TouchableOpacity 
+        style={styles.registerButton}
+        onPress={() => navigation.navigate("MainTabs", { screen: "Feed" })}
+        >
+        <Text 
+          style={styles.registerButtonText}>
+            Cadastrar
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }

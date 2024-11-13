@@ -15,6 +15,7 @@ import RealistaScreen from './src/screens/realista/realista';
 import OrientalScreen from './src/screens/oriental/Oriental';
 import TribalScreen from './src/screens/tribal/Tribal';
 import TatuadoresScreen from './src/screens/tatuadores/selecionarTatuadores';
+import TattooBookingScreen from './src/screens/agendData/agenData';
 
 enableScreens();
 
@@ -132,6 +133,11 @@ export default function App() {
         <Stack.Screen
           name='Tatuadores'
           component={TatuadoresScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name='TattooBookingScreen'
+          component={TattooBookingScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
